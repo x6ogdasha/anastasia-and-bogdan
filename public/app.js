@@ -3,9 +3,21 @@ const submitButton = document.querySelector('#submitButton');
 const successStatus = document.querySelector('#successStatus');
 const toast = document.querySelector('#toast');
 const drinkOptions = document.querySelector('#drinkOptions');
+const scheduleArt = document.querySelector('.schedule__art');
 const formStartedAt = Date.now();
 let isSubmitting = false;
 let toastTimer;
+
+if (scheduleArt && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if ('IntersectionObserver' in window) {
+    const scheduleObserver = new IntersectionObserver(([entry]) => {
+      scheduleArt.classList.toggle('is-animated', entry.isIntersecting);
+    }, { threshold: 0.35 });
+    scheduleObserver.observe(scheduleArt);
+  } else {
+    scheduleArt.classList.add('is-animated');
+  }
+}
 
 const allowedDrinks = new Set([
   'no_preference',

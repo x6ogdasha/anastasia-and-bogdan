@@ -208,13 +208,124 @@
     }
     .schedule .section-title { color: var(--berry); }
 
-    .schedule__illustration {
-      display: block;
+    .schedule__art {
+      position: relative;
       width: 174px;
       max-width: 100%;
-      height: auto;
       margin: 26px auto 0;
+    }
+
+    .schedule__illustration {
+      display: block;
+      width: 100%;
+      height: auto;
       mix-blend-mode: multiply;
+    }
+
+    .schedule__heart {
+      position: absolute;
+      z-index: 1;
+      display: block;
+      width: var(--heart-size, 13px);
+      height: auto;
+      left: var(--heart-left);
+      top: var(--heart-top);
+      opacity: 0;
+      transform: translateX(-50%) rotate(var(--heart-tilt, 0deg));
+      transform-origin: center;
+      will-change: transform, opacity;
+      pointer-events: none;
+    }
+
+    .schedule__heart path:first-child {
+      fill: var(--paper);
+      stroke: var(--ink);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .schedule__heart path:last-child {
+      fill: none;
+      stroke: rgba(40, 35, 36, .45);
+      stroke-width: 1.6;
+      stroke-linecap: round;
+    }
+
+    .schedule__heart--one {
+      --heart-left: 40.2%;
+      --heart-top: 7.8%;
+      --heart-size: 13px;
+      --heart-tilt: -13deg;
+    }
+
+    .schedule__heart--two {
+      --heart-left: 50.5%;
+      --heart-top: 4.7%;
+      --heart-size: 12px;
+      --heart-tilt: 2deg;
+    }
+
+    .schedule__heart--three {
+      --heart-left: 57.3%;
+      --heart-top: 10.2%;
+      --heart-size: 13px;
+      --heart-tilt: 15deg;
+    }
+
+    .schedule__heart--four {
+      --heart-left: 47.7%;
+      --heart-top: 14.2%;
+      --heart-size: 13px;
+      --heart-tilt: -5deg;
+    }
+
+    .schedule__art.is-animated .schedule__heart--one {
+      animation: heart-float-one 6.4s ease-in-out infinite;
+    }
+
+    .schedule__art.is-animated .schedule__heart--two {
+      animation: heart-float-two 6.7s .28s ease-in-out infinite;
+    }
+
+    .schedule__art.is-animated .schedule__heart--three {
+      animation: heart-float-three 6.2s .56s ease-in-out infinite;
+    }
+
+    .schedule__art.is-animated .schedule__heart--four {
+      animation: heart-float-four 6.5s .84s ease-in-out infinite;
+    }
+
+    @keyframes heart-float-one {
+      0%, 8% { opacity: 0; transform: translate3d(-50%, 5px, 0) rotate(-13deg) scale(.72); }
+      18% { opacity: 1; transform: translate3d(-50%, 0, 0) rotate(-9deg) scale(1); }
+      42% { opacity: 1; transform: translate3d(calc(-50% + 8px), -32px, 0) rotate(3deg) scale(1.03); }
+      68% { opacity: .9; transform: translate3d(calc(-50% - 7px), -70px, 0) rotate(-5deg) scale(.97); }
+      88%, 100% { opacity: 0; transform: translate3d(calc(-50% + 4px), -112px, 0) rotate(8deg) scale(.82); }
+    }
+
+    @keyframes heart-float-two {
+      0%, 8% { opacity: 0; transform: translate3d(-50%, 5px, 0) rotate(2deg) scale(.68); }
+      18% { opacity: 1; transform: translate3d(-50%, 0, 0) rotate(0deg) scale(1); }
+      40% { opacity: 1; transform: translate3d(calc(-50% - 7px), -29px, 0) rotate(-8deg) scale(.96); }
+      66% { opacity: .9; transform: translate3d(calc(-50% + 6px), -67px, 0) rotate(6deg) scale(1.04); }
+      88%, 100% { opacity: 0; transform: translate3d(calc(-50% - 3px), -108px, 0) rotate(-4deg) scale(.8); }
+    }
+
+    @keyframes heart-float-three {
+      0%, 8% { opacity: 0; transform: translate3d(-50%, 5px, 0) rotate(15deg) scale(.7); }
+      18% { opacity: 1; transform: translate3d(-50%, 0, 0) rotate(12deg) scale(1); }
+      43% { opacity: 1; transform: translate3d(calc(-50% + 6px), -34px, 0) rotate(20deg) scale(.98); }
+      69% { opacity: .9; transform: translate3d(calc(-50% - 8px), -73px, 0) rotate(7deg) scale(1.04); }
+      88%, 100% { opacity: 0; transform: translate3d(calc(-50% + 3px), -114px, 0) rotate(17deg) scale(.8); }
+    }
+
+    @keyframes heart-float-four {
+      0%, 8% { opacity: 0; transform: translate3d(-50%, 5px, 0) rotate(-5deg) scale(.7); }
+      18% { opacity: 1; transform: translate3d(-50%, 0, 0) rotate(-3deg) scale(1); }
+      41% { opacity: 1; transform: translate3d(calc(-50% - 8px), -31px, 0) rotate(-12deg) scale(1.02); }
+      67% { opacity: .9; transform: translate3d(calc(-50% + 7px), -69px, 0) rotate(5deg) scale(.96); }
+      88%, 100% { opacity: 0; transform: translate3d(calc(-50% - 4px), -110px, 0) rotate(-8deg) scale(.8); }
     }
 
     .timeline {
@@ -440,6 +551,10 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .vinyl { animation: none; }
+      .schedule__heart {
+        opacity: 1;
+        animation: none !important;
+      }
       .toast { transition: none; }
     }
 
@@ -482,7 +597,13 @@
 
     <section class="section schedule">
       <h2 class="section-title">Программа</h2>
-      <img class="schedule__illustration" src="assets/couple-program-v3.png" alt="Анастасия и Богдан обнимаются — рисунок пары со спины" width="1091" height="1442" loading="lazy" decoding="async" />
+      <div class="schedule__art">
+        <img class="schedule__illustration" src="assets/couple-program-no-hearts-v1.png" alt="Анастасия и Богдан обнимаются — рисунок пары со спины" width="1091" height="1442" loading="lazy" decoding="async" />
+        <svg class="schedule__heart schedule__heart--one" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 56 C27 50 9 39 8 24 C7 13 20 8 28 18 C31 22 32 25 32 25 C32 25 34 20 37 17 C46 8 58 14 56 25 C54 39 38 50 32 56Z"/><path d="M17 21 C14 27 18 35 24 41"/></svg>
+        <svg class="schedule__heart schedule__heart--two" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 56 C27 50 9 39 8 24 C7 13 20 8 28 18 C31 22 32 25 32 25 C32 25 34 20 37 17 C46 8 58 14 56 25 C54 39 38 50 32 56Z"/><path d="M17 21 C14 27 18 35 24 41"/></svg>
+        <svg class="schedule__heart schedule__heart--three" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 56 C27 50 9 39 8 24 C7 13 20 8 28 18 C31 22 32 25 32 25 C32 25 34 20 37 17 C46 8 58 14 56 25 C54 39 38 50 32 56Z"/><path d="M17 21 C14 27 18 35 24 41"/></svg>
+        <svg class="schedule__heart schedule__heart--four" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 56 C27 50 9 39 8 24 C7 13 20 8 28 18 C31 22 32 25 32 25 C32 25 34 20 37 17 C46 8 58 14 56 25 C54 39 38 50 32 56Z"/><path d="M17 21 C14 27 18 35 24 41"/></svg>
+      </div>
       <div class="timeline">
         <div class="timeline-row"><time class="timeline-time">15:30</time><p class="timeline-label">Сбор гостей</p></div>
         <div class="timeline-row"><time class="timeline-time">16:00</time><p class="timeline-label">Церемония</p></div>

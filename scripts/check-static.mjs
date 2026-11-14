@@ -5,6 +5,7 @@ const requiredFiles = [
   'public/app.js',
   'public/assets/couple-new-v2.png',
   'public/assets/couple-program-v3.png',
+  'public/assets/couple-program-no-hearts-v1.png',
   'public/assets/couple-original.png',
   'public/assets/bad-script-regular.ttf',
   'public/assets/neucha-regular.ttf',
@@ -20,6 +21,8 @@ for (const marker of [
   'name="drink"',
   'animation: vinyl-spin 7s linear infinite',
   '@keyframes vinyl-spin',
+  'class="schedule__art"',
+  '@keyframes heart-float-one',
 ]) {
   if (!html.includes(marker)) throw new Error(`В index.html отсутствует ${marker}`);
 }
