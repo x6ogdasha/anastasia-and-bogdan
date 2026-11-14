@@ -1,0 +1,34 @@
+{
+  "color": {
+    "ink": "#282324",
+    "paper": "#f6f3eb",
+    "berry": "#760d1b",
+    "blue": "#e4eff4",
+    "line": "rgba(40, 35, 36, 0.18)"
+  },
+  "font": {
+    "accent": "Bad Script",
+    "info": "Neucha"
+  },
+  "typography": {
+    "sectionTitle": {
+      "fontFamily": "Bad Script",
+      "fontSize": 52,
+      "fontWeight": 400,
+      "lineHeight": 1.2
+    },
+    "body": {
+      "fontFamily": "Neucha",
+      "fontSize": 18,
+      "lineHeight": 24,
+      "letterSpacing": 1.2
+    }
+  },
+  "layout": {
+    "mobileCanvasWidth": 430,
+    "sectionPaddingHorizontal": 28,
+    "sectionPaddingVertical": 74,
+    "fieldHeight": 52,
+    "fieldRadius": 14
+  }
+}

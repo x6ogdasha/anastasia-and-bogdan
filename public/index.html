@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Свадебное приглашение Анастасии и Богдана — 6 февраля 2027 года" />
+  <meta name="theme-color" content="#f6f3eb" />
+  <meta property="og:title" content="Анастасия и Богдан — 06.02.2027" />
+  <meta property="og:description" content="Будем счастливы разделить этот день с вами" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/couple-new-v2.png" />
+  <title>Анастасия и Богдан — 06.02.2027</title>
+  <link rel="preload" href="assets/bad-script-regular.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="assets/neucha-regular.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="assets/couple-new-v2.png" as="image" />
+  <style>
+    @font-face { font-family: 'Bad Script'; src: url('assets/bad-script-regular.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+    @font-face { font-family: Neucha; src: url('assets/neucha-regular.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+    :root {
+      --paper: #f6f3eb;
+      --paper-deep: #ebe6da;
+      --ink: #282324;
+      --berry: #760d1b;
+      --blue: #e4eff4;
+      --line: rgba(40, 35, 36, .18);
+      --accent-font: "Bad Script", cursive;
+      --info-font: "Neucha", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #d8d6ce;
+      font-family: var(--info-font);
+      letter-spacing: 1.2px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: min(100%, 430px);
+      margin: 0 auto;
+      overflow: hidden;
+      background: var(--paper);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .16);
+    }
+
+    .accent {
+      font-family: var(--accent-font);
+      font-weight: 400;
+      letter-spacing: normal;
+    }
+
+    .section {
+      padding: 74px 28px;
+      text-align: center;
+    }
+
+    .section-title {
+      margin: 0;
+      font-family: var(--accent-font);
+      font-size: 52px;
+      font-weight: 400;
+      letter-spacing: normal;
+      line-height: 1.2;
+    }
+
+    .body-copy {
+      max-width: 320px;
+      margin: 22px auto 0;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    .hero {
+      padding: 54px 22px 46px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 42px;
+      background: var(--paper);
+    }
+
+    .hero__names {
+      margin: 0;
+      color: var(--berry);
+      font-family: var(--accent-font);
+      font-size: 68px;
+      font-weight: 400;
+      letter-spacing: -0.6px;
+      line-height: 68px;
+      text-align: center;
+    }
+
+    .hero__names span { display: block; }
+
+    .hero__plus {
+      margin: 5px 0 7px;
+      color: var(--berry);
+      font-size: 32px;
+      line-height: 24px;
+    }
+
+    .hero__date {
+      margin-top: 0;
+      color: var(--berry);
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: 1.2px;
+      line-height: 32px;
+    }
+
+    .hero__art {
+      width: min(100%, 360px);
+      margin-top: 0;
+      flex: none;
+    }
+
+    .hero__drawing {
+      display: block;
+      width: 100%;
+      height: auto;
+      mix-blend-mode: multiply;
+      transform: rotate(10deg);
+      transform-origin: 50% 38%;
+    }
+
+    .hero__announcement {
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--accent-font);
+      font-size: 44px;
+      font-weight: 400;
+      letter-spacing: normal;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .hero__announcement span { display: block; }
+
+    .hero__announcement > span:first-child {
+      position: relative;
+      top: 8px;
+    }
+
+    .hero__announcement .hero__marrying {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 4px;
+      margin-top: -15px;
+    }
+
+    .hero__heart {
+      width: 40px;
+      height: 64px;
+      flex: none;
+      mix-blend-mode: multiply;
+    }
+
+    .hero__invite {
+      max-width: 300px;
+      margin: 0;
+      color: var(--berry);
+      font-size: 20px;
+      line-height: 27px;
+      text-align: center;
+    }
+
+    .location {
+      color: var(--paper);
+      background: var(--berry);
+    }
+
+    .location .body-copy { color: var(--paper); }
+
+    .location__address span { display: block; }
+
+    .location__entrance {
+      margin-top: 9px;
+      color: rgba(246, 243, 235, .5);
+    }
+
+    .button {
+      min-height: 50px;
+      margin-top: 28px;
+      padding: 0 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      color: inherit;
+      background: transparent;
+      font: 400 18px/24px var(--info-font);
+      letter-spacing: 1.2px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .schedule {
+      padding-bottom: 37px;
+      background: var(--paper);
+    }
+    .schedule .section-title { color: var(--berry); }
+
+    .schedule__illustration {
+      display: block;
+      width: 174px;
+      max-width: 100%;
+      height: auto;
+      margin: 26px auto 0;
+      mix-blend-mode: multiply;
+    }
+
+    .timeline {
+      margin-top: 38px;
+      border-top: 1px solid var(--line);
+      text-align: left;
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 22px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-time {
+      color: var(--berry);
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    .timeline-label {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    .dresscode {
+      padding-top: 37px;
+      background: var(--paper);
+    }
+    .dresscode .section-title { color: var(--berry); }
+
+    .vinyl-board {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 320px;
+      margin: 34px auto 0;
+    }
+
+    .vinyl {
+      width: 100%;
+      height: auto;
+      display: block;
+      overflow: visible;
+    }
+
+    .rsvp {
+      color: var(--ink);
+      background: var(--blue);
+    }
+
+    .rsvp .section-title { font-size: 52px; color: var(--berry); }
+
+    .form {
+      display: grid;
+      gap: 16px;
+      margin-top: 38px;
+      text-align: left;
+    }
+
+    .field,
+    .select {
+      width: 100%;
+      height: 52px;
+      padding: 0 18px;
+      border: 1px solid rgba(40, 35, 36, .28);
+      border-radius: 14px;
+      outline: none;
+      color: var(--ink);
+      background: rgba(255, 255, 255, .18);
+      font: 400 18px/24px var(--info-font);
+      letter-spacing: 1.2px;
+    }
+
+    .select {
+      appearance: none;
+      -webkit-appearance: none;
+      padding-right: 44px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='m1 1 5 5 5-5' fill='none' stroke='%23282324' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 18px center;
+    }
+
+    .field::placeholder { color: var(--ink); opacity: 1; }
+    .field:focus-visible, .select:focus-visible, .button:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 3px;
+    }
+    .select option { color: var(--ink); }
+
+    .drink-group {
+      min-width: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font: 400 18px/24px var(--info-font);
+    }
+
+    .drink-group legend { padding: 0 0 10px; }
+
+    .drink-options {
+      padding: 6px 18px;
+      border: 1px solid rgba(40, 35, 36, .28);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, .18);
+    }
+
+    .drink-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 44px;
+      padding: 8px 0;
+      cursor: pointer;
+    }
+
+    .drink-option input {
+      flex: 0 0 18px;
+      width: 18px;
+      height: 18px;
+      margin: 0;
+      accent-color: var(--berry);
+      cursor: pointer;
+    }
+
+    .drink-option input:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+    }
+
+    .rsvp .button {
+      width: 100%;
+      margin-top: 4px;
+      border-color: var(--paper);
+      color: var(--berry);
+      background: var(--paper);
+    }
+
+    .rsvp .button:disabled {
+      cursor: wait;
+      opacity: .68;
+    }
+
+    .field[aria-invalid="true"],
+    .select[aria-invalid="true"],
+    .drink-options[aria-invalid="true"] {
+      border-color: var(--berry);
+      box-shadow: 0 0 0 1px var(--berry);
+    }
+
+    .field-error {
+      min-height: 0;
+      margin: 6px 4px 0;
+      color: var(--berry);
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    .field-error:empty { display: none; }
+
+    .form-status {
+      display: none;
+      margin-top: 34px;
+      padding: 24px 20px;
+      border: 1px solid rgba(40, 35, 36, .18);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .24);
+      font-size: 18px;
+      line-height: 26px;
+      text-align: center;
+    }
+
+    .form-status.is-visible { display: block; }
+    .form-status__title {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--berry);
+      font: 400 31px/1.2 var(--accent-font);
+      letter-spacing: normal;
+    }
+
+    .honeypot {
+      position: absolute;
+      left: -10000px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .toast {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      left: 18px;
+      z-index: 10;
+      max-width: 394px;
+      margin: auto;
+      padding: 14px 18px;
+      border-radius: 14px;
+      color: var(--paper);
+      background: var(--ink);
+      font-size: 13px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      transition: .25s ease;
+    }
+
+    .toast.is-visible { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .toast { transition: none; }
+    }
+
+    @media (min-width: 700px) {
+      body { padding: 42px 0; }
+      .page { border-radius: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <h1 class="hero__names">
+        <span>Анастасия</span>
+        <span class="hero__plus">и</span>
+        <span>Богдан</span>
+      </h1>
+      <div class="hero__date">6 февраля 2027</div>
+
+      <div class="hero__art">
+        <img class="hero__drawing" src="assets/couple-new-v2.png" alt="Рисунок Анастасии и Богдана" width="5960" height="7015" decoding="async" />
+      </div>
+
+      <div class="hero__announcement">
+        <span>Ура</span>
+        <span class="hero__marrying">Мы женимся<svg class="hero__heart" viewBox="720 740 140 224" role="img" aria-label="Сердечко из вашего рисунка" xmlns="http://www.w3.org/2000/svg"><defs><clipPath id="art-heart"><polygon points="725,730 820,730 820,975 780,975 780,925 725,850" /></clipPath></defs><g transform="rotate(32 780 850)"><image href="assets/couple-original.png" width="1600" height="1600" clip-path="url(#art-heart)" /></g></svg></span>
+      </div>
+
+      <p class="hero__invite">Будем счастливы разделить этот день с вами</p>
+    </section>
+
+    <section class="section location">
+      <h2 class="section-title">Сезоны<br />в Social Club</h2>
+      <p class="body-copy location__address">
+        <span>Санкт-Петербург, Пять углов, ул. Рубинштейна, 40/11</span>
+        <span class="location__entrance">Вход с улицы Рубинштейна, малый зал</span>
+      </p>
+      <a class="button" href="https://yandex.ru/maps/?text=%D0%A1%D0%B5%D0%B7%D0%BE%D0%BD%D1%8B%20%D0%B2%20Social%20Club%2C%20%D0%A0%D1%83%D0%B1%D0%B8%D0%BD%D1%88%D1%82%D0%B5%D0%B9%D0%BD%D0%B0%2040%2F11" target="_blank" rel="noreferrer">Открыть карту</a>
+    </section>
+
+    <section class="section schedule">
+      <h2 class="section-title">Программа</h2>
+      <img class="schedule__illustration" src="assets/couple-program-v3.png" alt="Анастасия и Богдан обнимаются — рисунок пары со спины" width="1091" height="1442" loading="lazy" decoding="async" />
+      <div class="timeline">
+        <div class="timeline-row"><time class="timeline-time">15:30</time><p class="timeline-label">Сбор гостей</p></div>
+        <div class="timeline-row"><time class="timeline-time">16:00</time><p class="timeline-label">Церемония</p></div>
+        <div class="timeline-row"><time class="timeline-time">17:30</time><p class="timeline-label">Ужин</p></div>
+        <div class="timeline-row"><time class="timeline-time">22:00</time><p class="timeline-label">Завершение вечера</p></div>
+      </div>
+    </section>
+
+    <section class="section dresscode">
+      <h2 class="section-title">Дресс-код</h2>
+      <p class="body-copy">Для нас нет ничего важнее вашего присутствия, но мы будем очень рады, если у вас получится поддержать выбранную нами гамму в своих нарядах</p>
+      <div class="vinyl-board" role="group" aria-label="Палитра дресс-кода">
+        <svg class="vinyl" viewBox="0 0 110 110" role="img" aria-label="Кофейная виниловая пластинка" style="transform: rotate(-4deg)">
+          <path d="M54 5 C82 3 105 25 105 53 C107 81 85 104 57 105 C28 107 6 87 5 58 C3 30 25 6 54 5Z" fill="#795a45" stroke="#302b29" stroke-width="1.8" />
+          <g fill="none" stroke="#302b29" stroke-linecap="round"><path d="M24 25 C9 42 10 68 24 83 M32 93 C53 106 81 95 93 77 M99 60 C102 35 85 15 64 12" stroke-width="1.1" /><path d="M38 17 C18 26 13 49 20 68 C25 85 42 94 59 92 C81 90 94 72 92 51 C91 34 78 20 64 18" stroke-width="1.1" /><path d="M28 34 C18 50 24 74 42 83 C60 92 79 79 85 64 M86 52 C85 34 72 25 57 25" stroke-width="1.05" /><path d="M41 31 C28 39 27 56 34 68 C43 83 67 81 76 65 C84 50 72 32 58 31" stroke-width=".95" /></g>
+          <path d="M54 40 C63 39 71 46 70 56 C70 66 62 71 53 70 C44 70 39 62 40 53 C40 45 46 40 54 40Z" fill="#eee5d3" stroke="#302b29" stroke-width="1.4" /><path d="M49 46 Q55 44 61 47 M49 64 Q55 66 60 63" fill="none" stroke="#302b29" stroke-width="1.1" stroke-linecap="round" /><path d="M54 52 C58 51 59 57 55 58 C51 58 51 53 54 52Z" fill="#f6f3eb" stroke="#302b29" stroke-width="1.3" />
+        </svg>
+        <svg class="vinyl" viewBox="0 0 110 110" role="img" aria-label="Виниловая пластинка цвета тауп" style="transform: rotate(3deg)">
+          <path d="M54 5 C82 3 105 25 105 53 C107 81 85 104 57 105 C28 107 6 87 5 58 C3 30 25 6 54 5Z" fill="#a58e7e" stroke="#302b29" stroke-width="1.8" />
+          <g fill="none" stroke="#302b29" stroke-linecap="round"><path d="M24 25 C9 42 10 68 24 83 M32 93 C53 106 81 95 93 77 M99 60 C102 35 85 15 64 12" stroke-width="1.1" /><path d="M38 17 C18 26 13 49 20 68 C25 85 42 94 59 92 C81 90 94 72 92 51 C91 34 78 20 64 18" stroke-width="1.1" /><path d="M28 34 C18 50 24 74 42 83 C60 92 79 79 85 64 M86 52 C85 34 72 25 57 25" stroke-width="1.05" /><path d="M41 31 C28 39 27 56 34 68 C43 83 67 81 76 65 C84 50 72 32 58 31" stroke-width=".95" /></g>
+          <path d="M54 40 C63 39 71 46 70 56 C70 66 62 71 53 70 C44 70 39 62 40 53 C40 45 46 40 54 40Z" fill="#eee5d3" stroke="#302b29" stroke-width="1.4" /><path d="M49 46 Q55 44 61 47 M49 64 Q55 66 60 63" fill="none" stroke="#302b29" stroke-width="1.1" stroke-linecap="round" /><path d="M54 52 C58 51 59 57 55 58 C51 58 51 53 54 52Z" fill="#f6f3eb" stroke="#302b29" stroke-width="1.3" />
+        </svg>
+        <svg class="vinyl" viewBox="0 0 110 110" role="img" aria-label="Виниловая пластинка цвета шампань" style="transform: rotate(-2deg)">
+          <path d="M54 5 C82 3 105 25 105 53 C107 81 85 104 57 105 C28 107 6 87 5 58 C3 30 25 6 54 5Z" fill="#d5c3a5" stroke="#302b29" stroke-width="1.8" />
+          <g fill="none" stroke="#302b29" stroke-linecap="round"><path d="M24 25 C9 42 10 68 24 83 M32 93 C53 106 81 95 93 77 M99 60 C102 35 85 15 64 12" stroke-width="1.1" /><path d="M38 17 C18 26 13 49 20 68 C25 85 42 94 59 92 C81 90 94 72 92 51 C91 34 78 20 64 18" stroke-width="1.1" /><path d="M28 34 C18 50 24 74 42 83 C60 92 79 79 85 64 M86 52 C85 34 72 25 57 25" stroke-width="1.05" /><path d="M41 31 C28 39 27 56 34 68 C43 83 67 81 76 65 C84 50 72 32 58 31" stroke-width=".95" /></g>
+          <path d="M54 40 C63 39 71 46 70 56 C70 66 62 71 53 70 C44 70 39 62 40 53 C40 45 46 40 54 40Z" fill="#eee5d3" stroke="#302b29" stroke-width="1.4" /><path d="M49 46 Q55 44 61 47 M49 64 Q55 66 60 63" fill="none" stroke="#302b29" stroke-width="1.1" stroke-linecap="round" /><path d="M54 52 C58 51 59 57 55 58 C51 58 51 53 54 52Z" fill="#f6f3eb" stroke="#302b29" stroke-width="1.3" />
+        </svg>
+        <svg class="vinyl" viewBox="0 0 110 110" role="img" aria-label="Глубокая синяя виниловая пластинка" style="transform: rotate(4deg)">
+          <path d="M54 5 C82 3 105 25 105 53 C107 81 85 104 57 105 C28 107 6 87 5 58 C3 30 25 6 54 5Z" fill="#40668c" stroke="#302b29" stroke-width="1.8" />
+          <g fill="none" stroke="#302b29" stroke-linecap="round"><path d="M24 25 C9 42 10 68 24 83 M32 93 C53 106 81 95 93 77 M99 60 C102 35 85 15 64 12" stroke-width="1.1" /><path d="M38 17 C18 26 13 49 20 68 C25 85 42 94 59 92 C81 90 94 72 92 51 C91 34 78 20 64 18" stroke-width="1.1" /><path d="M28 34 C18 50 24 74 42 83 C60 92 79 79 85 64 M86 52 C85 34 72 25 57 25" stroke-width="1.05" /><path d="M41 31 C28 39 27 56 34 68 C43 83 67 81 76 65 C84 50 72 32 58 31" stroke-width=".95" /></g>
+          <path d="M54 40 C63 39 71 46 70 56 C70 66 62 71 53 70 C44 70 39 62 40 53 C40 45 46 40 54 40Z" fill="#eee5d3" stroke="#302b29" stroke-width="1.4" /><path d="M49 46 Q55 44 61 47 M49 64 Q55 66 60 63" fill="none" stroke="#302b29" stroke-width="1.1" stroke-linecap="round" /><path d="M54 52 C58 51 59 57 55 58 C51 58 51 53 54 52Z" fill="#f6f3eb" stroke="#302b29" stroke-width="1.3" />
+        </svg>
+        <svg class="vinyl" viewBox="0 0 110 110" role="img" aria-label="Серо-голубая виниловая пластинка" style="transform: rotate(-3deg)">
+          <path d="M54 5 C82 3 105 25 105 53 C107 81 85 104 57 105 C28 107 6 87 5 58 C3 30 25 6 54 5Z" fill="#8c9eaf" stroke="#302b29" stroke-width="1.8" />
+          <g fill="none" stroke="#302b29" stroke-linecap="round"><path d="M24 25 C9 42 10 68 24 83 M32 93 C53 106 81 95 93 77 M99 60 C102 35 85 15 64 12" stroke-width="1.1" /><path d="M38 17 C18 26 13 49 20 68 C25 85 42 94 59 92 C81 90 94 72 92 51 C91 34 78 20 64 18" stroke-width="1.1" /><path d="M28 34 C18 50 24 74 42 83 C60 92 79 79 85 64 M86 52 C85 34 72 25 57 25" stroke-width="1.05" /><path d="M41 31 C28 39 27 56 34 68 C43 83 67 81 76 65 C84 50 72 32 58 31" stroke-width=".95" /></g>
+          <path d="M54 40 C63 39 71 46 70 56 C70 66 62 71 53 70 C44 70 39 62 40 53 C40 45 46 40 54 40Z" fill="#eee5d3" stroke="#302b29" stroke-width="1.4" /><path d="M49 46 Q55 44 61 47 M49 64 Q55 66 60 63" fill="none" stroke="#302b29" stroke-width="1.1" stroke-linecap="round" /><path d="M54 52 C58 51 59 57 55 58 C51 58 51 53 54 52Z" fill="#f6f3eb" stroke="#302b29" stroke-width="1.3" />
+        </svg>
+        <svg class="vinyl" viewBox="0 0 110 110" role="img" aria-label="Светло-голубая виниловая пластинка" style="transform: rotate(2deg)">
+          <path d="M54 5 C82 3 105 25 105 53 C107 81 85 104 57 105 C28 107 6 87 5 58 C3 30 25 6 54 5Z" fill="#b4cfd8" stroke="#302b29" stroke-width="1.8" />
+          <g fill="none" stroke="#302b29" stroke-linecap="round"><path d="M24 25 C9 42 10 68 24 83 M32 93 C53 106 81 95 93 77 M99 60 C102 35 85 15 64 12" stroke-width="1.1" /><path d="M38 17 C18 26 13 49 20 68 C25 85 42 94 59 92 C81 90 94 72 92 51 C91 34 78 20 64 18" stroke-width="1.1" /><path d="M28 34 C18 50 24 74 42 83 C60 92 79 79 85 64 M86 52 C85 34 72 25 57 25" stroke-width="1.05" /><path d="M41 31 C28 39 27 56 34 68 C43 83 67 81 76 65 C84 50 72 32 58 31" stroke-width=".95" /></g>
+          <path d="M54 40 C63 39 71 46 70 56 C70 66 62 71 53 70 C44 70 39 62 40 53 C40 45 46 40 54 40Z" fill="#eee5d3" stroke="#302b29" stroke-width="1.4" /><path d="M49 46 Q55 44 61 47 M49 64 Q55 66 60 63" fill="none" stroke="#302b29" stroke-width="1.1" stroke-linecap="round" /><path d="M54 52 C58 51 59 57 55 58 C51 58 51 53 54 52Z" fill="#f6f3eb" stroke="#302b29" stroke-width="1.3" />
+        </svg>
+      </div>
+      <p class="body-copy">Кофейные оттенки, шампань, холодные и теплые оттенки голубого</p>
+    </section>
+
+    <section class="section rsvp" id="rsvp">
+      <h2 class="section-title">Вы будете с нами?</h2>
+      <form class="form" id="rsvpForm" novalidate>
+        <div class="honeypot" aria-hidden="true">
+          <label for="website">Ваш сайт</label>
+          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+        </div>
+        <label>
+          <input class="field" name="name" aria-label="Ваше имя" aria-describedby="nameError" autocomplete="name" placeholder="Ваше имя" maxlength="120" required />
+          <span class="field-error" id="nameError" data-error-for="name"></span>
+        </label>
+        <label>
+          <select class="select" name="attendance" aria-label="Присутствие на свадьбе" aria-describedby="attendanceError" required>
+            <option value="" disabled selected>Сможете прийти?</option>
+            <option value="yes">Да, с радостью!</option>
+            <option value="no">К сожалению, не смогу</option>
+          </select>
+          <span class="field-error" id="attendanceError" data-error-for="attendance"></span>
+        </label>
+        <label>
+          <input class="field" name="song" aria-label="Ваш трек для танцпола — исполнитель и название, необязательно" aria-describedby="songError" placeholder="Ваш трек для танцпола" maxlength="200" />
+          <span class="field-error" id="songError" data-error-for="song"></span>
+        </label>
+        <fieldset class="drink-group">
+          <legend>Что будете пить?</legend>
+          <div class="drink-options" id="drinkOptions" aria-describedby="drinksError">
+            <label class="drink-option"><input type="checkbox" name="drink" value="no_preference" /><span>Без предпочтений</span></label>
+            <label class="drink-option"><input type="checkbox" name="drink" value="sparkling" /><span>Игристое</span></label>
+            <label class="drink-option"><input type="checkbox" name="drink" value="white_wine" /><span>Белое вино</span></label>
+            <label class="drink-option"><input type="checkbox" name="drink" value="red_wine" /><span>Красное вино</span></label>
+            <label class="drink-option"><input type="checkbox" name="drink" value="spirits" /><span>Крепкий алкоголь</span></label>
+            <label class="drink-option"><input type="checkbox" name="drink" value="non_alcoholic" /><span>Безалкогольные напитки</span></label>
+          </div>
+          <span class="field-error" id="drinksError" data-error-for="drinks"></span>
+        </fieldset>
+        <button class="button" id="submitButton" type="submit">Отправить</button>
+      </form>
+      <div class="form-status" id="successStatus" role="status" aria-live="polite">
+        <span class="form-status__title">Спасибо!</span>
+        Ваш ответ сохранён. До встречи 6 февраля!
+      </div>
+    </section>
+
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

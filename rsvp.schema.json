@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/wedding-rsvp.json",
+  "title": "Wedding RSVP",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "attendance", "drinks"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "attendance": {
+      "type": "string",
+      "enum": ["yes", "no"]
+    },
+    "song": {
+      "type": "string",
+      "maxLength": 200,
+      "default": ""
+    },
+    "drinks": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "no_preference",
+          "sparkling",
+          "white_wine",
+          "red_wine",
+          "spirits",
+          "non_alcoholic"
+        ]
+      }
+    }
+  }
+}
