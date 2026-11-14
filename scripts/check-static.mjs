@@ -13,7 +13,14 @@ const requiredFiles = [
 await Promise.all(requiredFiles.map((file) => access(file)));
 const html = await readFile('public/index.html', 'utf8');
 
-for (const marker of ['id="rsvpForm"', 'src="app.js"', 'name="attendance"', 'name="drink"']) {
+for (const marker of [
+  'id="rsvpForm"',
+  'src="app.js"',
+  'name="attendance"',
+  'name="drink"',
+  'animation: vinyl-spin 7s linear infinite',
+  '@keyframes vinyl-spin',
+]) {
   if (!html.includes(marker)) throw new Error(`В index.html отсутствует ${marker}`);
 }
 

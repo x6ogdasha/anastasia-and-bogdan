@@ -262,6 +262,14 @@
       height: auto;
       display: block;
       overflow: visible;
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: vinyl-spin 7s linear infinite;
+      will-change: transform;
+    }
+
+    @keyframes vinyl-spin {
+      to { transform: rotate(1turn); }
     }
 
     .rsvp {
@@ -431,6 +439,7 @@
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
+      .vinyl { animation: none; }
       .toast { transition: none; }
     }
 
@@ -486,32 +495,32 @@
       <h2 class="section-title">Дресс-код</h2>
       <p class="body-copy">Для нас нет ничего важнее вашего присутствия, но мы будем очень рады, если у вас получится поддержать выбранную нами гамму в своих нарядах</p>
       <div class="vinyl-board" role="group" aria-label="Палитра дресс-кода">
-        <svg class="vinyl" viewBox="0 0 110 110" role="img" aria-label="Кофейная виниловая пластинка" style="transform: rotate(-4deg)">
+        <svg class="vinyl" viewBox="0 0 110 110" role="img" aria-label="Кофейная виниловая пластинка">
           <path d="M54 5 C82 3 105 25 105 53 C107 81 85 104 57 105 C28 107 6 87 5 58 C3 30 25 6 54 5Z" fill="#795a45" stroke="#302b29" stroke-width="1.8" />
           <g fill="none" stroke="#302b29" stroke-linecap="round"><path d="M24 25 C9 42 10 68 24 83 M32 93 C53 106 81 95 93 77 M99 60 C102 35 85 15 64 12" stroke-width="1.1" /><path d="M38 17 C18 26 13 49 20 68 C25 85 42 94 59 92 C81 90 94 72 92 51 C91 34 78 20 64 18" stroke-width="1.1" /><path d="M28 34 C18 50 24 74 42 83 C60 92 79 79 85 64 M86 52 C85 34 72 25 57 25" stroke-width="1.05" /><path d="M41 31 C28 39 27 56 34 68 C43 83 67 81 76 65 C84 50 72 32 58 31" stroke-width=".95" /></g>
           <path d="M54 40 C63 39 71 46 70 56 C70 66 62 71 53 70 C44 70 39 62 40 53 C40 45 46 40 54 40Z" fill="#eee5d3" stroke="#302b29" stroke-width="1.4" /><path d="M49 46 Q55 44 61 47 M49 64 Q55 66 60 63" fill="none" stroke="#302b29" stroke-width="1.1" stroke-linecap="round" /><path d="M54 52 C58 51 59 57 55 58 C51 58 51 53 54 52Z" fill="#f6f3eb" stroke="#302b29" stroke-width="1.3" />
         </svg>
-        <svg class="vinyl" viewBox="0 0 110 110" role="img" aria-label="Виниловая пластинка цвета тауп" style="transform: rotate(3deg)">
+        <svg class="vinyl" viewBox="0 0 110 110" role="img" aria-label="Виниловая пластинка цвета тауп">
           <path d="M54 5 C82 3 105 25 105 53 C107 81 85 104 57 105 C28 107 6 87 5 58 C3 30 25 6 54 5Z" fill="#a58e7e" stroke="#302b29" stroke-width="1.8" />
           <g fill="none" stroke="#302b29" stroke-linecap="round"><path d="M24 25 C9 42 10 68 24 83 M32 93 C53 106 81 95 93 77 M99 60 C102 35 85 15 64 12" stroke-width="1.1" /><path d="M38 17 C18 26 13 49 20 68 C25 85 42 94 59 92 C81 90 94 72 92 51 C91 34 78 20 64 18" stroke-width="1.1" /><path d="M28 34 C18 50 24 74 42 83 C60 92 79 79 85 64 M86 52 C85 34 72 25 57 25" stroke-width="1.05" /><path d="M41 31 C28 39 27 56 34 68 C43 83 67 81 76 65 C84 50 72 32 58 31" stroke-width=".95" /></g>
           <path d="M54 40 C63 39 71 46 70 56 C70 66 62 71 53 70 C44 70 39 62 40 53 C40 45 46 40 54 40Z" fill="#eee5d3" stroke="#302b29" stroke-width="1.4" /><path d="M49 46 Q55 44 61 47 M49 64 Q55 66 60 63" fill="none" stroke="#302b29" stroke-width="1.1" stroke-linecap="round" /><path d="M54 52 C58 51 59 57 55 58 C51 58 51 53 54 52Z" fill="#f6f3eb" stroke="#302b29" stroke-width="1.3" />
         </svg>
-        <svg class="vinyl" viewBox="0 0 110 110" role="img" aria-label="Виниловая пластинка цвета шампань" style="transform: rotate(-2deg)">
+        <svg class="vinyl" viewBox="0 0 110 110" role="img" aria-label="Виниловая пластинка цвета шампань">
           <path d="M54 5 C82 3 105 25 105 53 C107 81 85 104 57 105 C28 107 6 87 5 58 C3 30 25 6 54 5Z" fill="#d5c3a5" stroke="#302b29" stroke-width="1.8" />
           <g fill="none" stroke="#302b29" stroke-linecap="round"><path d="M24 25 C9 42 10 68 24 83 M32 93 C53 106 81 95 93 77 M99 60 C102 35 85 15 64 12" stroke-width="1.1" /><path d="M38 17 C18 26 13 49 20 68 C25 85 42 94 59 92 C81 90 94 72 92 51 C91 34 78 20 64 18" stroke-width="1.1" /><path d="M28 34 C18 50 24 74 42 83 C60 92 79 79 85 64 M86 52 C85 34 72 25 57 25" stroke-width="1.05" /><path d="M41 31 C28 39 27 56 34 68 C43 83 67 81 76 65 C84 50 72 32 58 31" stroke-width=".95" /></g>
           <path d="M54 40 C63 39 71 46 70 56 C70 66 62 71 53 70 C44 70 39 62 40 53 C40 45 46 40 54 40Z" fill="#eee5d3" stroke="#302b29" stroke-width="1.4" /><path d="M49 46 Q55 44 61 47 M49 64 Q55 66 60 63" fill="none" stroke="#302b29" stroke-width="1.1" stroke-linecap="round" /><path d="M54 52 C58 51 59 57 55 58 C51 58 51 53 54 52Z" fill="#f6f3eb" stroke="#302b29" stroke-width="1.3" />
         </svg>
-        <svg class="vinyl" viewBox="0 0 110 110" role="img" aria-label="Глубокая синяя виниловая пластинка" style="transform: rotate(4deg)">
+        <svg class="vinyl" viewBox="0 0 110 110" role="img" aria-label="Глубокая синяя виниловая пластинка">
           <path d="M54 5 C82 3 105 25 105 53 C107 81 85 104 57 105 C28 107 6 87 5 58 C3 30 25 6 54 5Z" fill="#40668c" stroke="#302b29" stroke-width="1.8" />
           <g fill="none" stroke="#302b29" stroke-linecap="round"><path d="M24 25 C9 42 10 68 24 83 M32 93 C53 106 81 95 93 77 M99 60 C102 35 85 15 64 12" stroke-width="1.1" /><path d="M38 17 C18 26 13 49 20 68 C25 85 42 94 59 92 C81 90 94 72 92 51 C91 34 78 20 64 18" stroke-width="1.1" /><path d="M28 34 C18 50 24 74 42 83 C60 92 79 79 85 64 M86 52 C85 34 72 25 57 25" stroke-width="1.05" /><path d="M41 31 C28 39 27 56 34 68 C43 83 67 81 76 65 C84 50 72 32 58 31" stroke-width=".95" /></g>
           <path d="M54 40 C63 39 71 46 70 56 C70 66 62 71 53 70 C44 70 39 62 40 53 C40 45 46 40 54 40Z" fill="#eee5d3" stroke="#302b29" stroke-width="1.4" /><path d="M49 46 Q55 44 61 47 M49 64 Q55 66 60 63" fill="none" stroke="#302b29" stroke-width="1.1" stroke-linecap="round" /><path d="M54 52 C58 51 59 57 55 58 C51 58 51 53 54 52Z" fill="#f6f3eb" stroke="#302b29" stroke-width="1.3" />
         </svg>
-        <svg class="vinyl" viewBox="0 0 110 110" role="img" aria-label="Серо-голубая виниловая пластинка" style="transform: rotate(-3deg)">
+        <svg class="vinyl" viewBox="0 0 110 110" role="img" aria-label="Серо-голубая виниловая пластинка">
           <path d="M54 5 C82 3 105 25 105 53 C107 81 85 104 57 105 C28 107 6 87 5 58 C3 30 25 6 54 5Z" fill="#8c9eaf" stroke="#302b29" stroke-width="1.8" />
           <g fill="none" stroke="#302b29" stroke-linecap="round"><path d="M24 25 C9 42 10 68 24 83 M32 93 C53 106 81 95 93 77 M99 60 C102 35 85 15 64 12" stroke-width="1.1" /><path d="M38 17 C18 26 13 49 20 68 C25 85 42 94 59 92 C81 90 94 72 92 51 C91 34 78 20 64 18" stroke-width="1.1" /><path d="M28 34 C18 50 24 74 42 83 C60 92 79 79 85 64 M86 52 C85 34 72 25 57 25" stroke-width="1.05" /><path d="M41 31 C28 39 27 56 34 68 C43 83 67 81 76 65 C84 50 72 32 58 31" stroke-width=".95" /></g>
           <path d="M54 40 C63 39 71 46 70 56 C70 66 62 71 53 70 C44 70 39 62 40 53 C40 45 46 40 54 40Z" fill="#eee5d3" stroke="#302b29" stroke-width="1.4" /><path d="M49 46 Q55 44 61 47 M49 64 Q55 66 60 63" fill="none" stroke="#302b29" stroke-width="1.1" stroke-linecap="round" /><path d="M54 52 C58 51 59 57 55 58 C51 58 51 53 54 52Z" fill="#f6f3eb" stroke="#302b29" stroke-width="1.3" />
         </svg>
-        <svg class="vinyl" viewBox="0 0 110 110" role="img" aria-label="Светло-голубая виниловая пластинка" style="transform: rotate(2deg)">
+        <svg class="vinyl" viewBox="0 0 110 110" role="img" aria-label="Светло-голубая виниловая пластинка">
           <path d="M54 5 C82 3 105 25 105 53 C107 81 85 104 57 105 C28 107 6 87 5 58 C3 30 25 6 54 5Z" fill="#b4cfd8" stroke="#302b29" stroke-width="1.8" />
           <g fill="none" stroke="#302b29" stroke-linecap="round"><path d="M24 25 C9 42 10 68 24 83 M32 93 C53 106 81 95 93 77 M99 60 C102 35 85 15 64 12" stroke-width="1.1" /><path d="M38 17 C18 26 13 49 20 68 C25 85 42 94 59 92 C81 90 94 72 92 51 C91 34 78 20 64 18" stroke-width="1.1" /><path d="M28 34 C18 50 24 74 42 83 C60 92 79 79 85 64 M86 52 C85 34 72 25 57 25" stroke-width="1.05" /><path d="M41 31 C28 39 27 56 34 68 C43 83 67 81 76 65 C84 50 72 32 58 31" stroke-width=".95" /></g>
           <path d="M54 40 C63 39 71 46 70 56 C70 66 62 71 53 70 C44 70 39 62 40 53 C40 45 46 40 54 40Z" fill="#eee5d3" stroke="#302b29" stroke-width="1.4" /><path d="M49 46 Q55 44 61 47 M49 64 Q55 66 60 63" fill="none" stroke="#302b29" stroke-width="1.1" stroke-linecap="round" /><path d="M54 52 C58 51 59 57 55 58 C51 58 51 53 54 52Z" fill="#f6f3eb" stroke="#302b29" stroke-width="1.3" />
